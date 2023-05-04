@@ -125,22 +125,26 @@ function exercicio5(){
 é um valor perfeito ou falso se não for. Um valor é dito perfeito quando 
 ele é igual a soma dos seus divisores excetuando ele próprio.*/
     
-function findPerfectNumber(number){
     let sum = 0
-
-    for(let i = 1; i < number; i++){
-        if(number % i === 0){
+    
+    function findPerfectNumber(number){
+       
+        for(let i = 1; i < number; i++){
+            if(number % i === 0){
             sum += i
+            }
         }
+
+        if(sum === number){
+            return true
+        }else{
+            return false;
+        }
+
     }
 
-    if(sum === number){
-        return true
-    }
-
-    return false
-
-}
+    let resultado = findPerfectNumber(6);
+    console.log(resultado)
 }
 
 function exercicio6(){
@@ -196,15 +200,18 @@ alerta com a média. Exemplo: “João, sua média é 70.” A função
 também deve mostrar no console.log() as notas recebidas. Exemplo
 “Nota 1: 60,Nota 2: 70,Nota 3: 80”.*/
 
+    
+    calcularMedia(7, 9, 6, 'João');
+    
     function calcularMedia(nota1, nota2, nota3, nome){
         
         let media = (nota1+nota2+nota3)/3;
         console.log(`Nota 1: ${nota1}.`);
         console.log(`Nota 2: ${nota2}.`);
         console.log(`Nota 3: ${nota3}.`);
-        console.log(`${nome}, sua média é ${media}.`);
+        console.log(`${nome} sua média é ${media}.`);
     }
     
-    calcularMedia(7, 9, 6, João);
+   
 }
 
